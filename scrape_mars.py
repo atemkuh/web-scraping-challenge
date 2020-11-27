@@ -27,3 +27,7 @@ ddef scrape():
     nasa_jpl_images_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(nasa_jpl_images_url)
     soup_images = bs(html,'html.parser')
+    # to get featured image
+    featured_image_path = soup_images.find_all('img')[3]["src"]
+    featured_image_url = nasa_jpl_url+featured_image_path
+    
