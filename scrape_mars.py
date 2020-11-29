@@ -1,5 +1,4 @@
 from flask_app import scrape
-import os
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import pandas as pd
@@ -86,4 +85,5 @@ def scrape():
         "featured_image_url": featured_image_url,
         "mars_facts_html": str(mars_facts_html),
         "hemisphere_images": hemisphere_image_urls
-    }
+    } 
+    return mars_dict
