@@ -6,7 +6,7 @@ import scrape_mars
 app = Flask(__name__)
 
 #flask connection to Mondo_DB
-app.config["mongodb_url"] = "mongodb://localhost:27017/mars_app"
+app.config["mongo_db_url"] = "mongodb://localhost:27017/mars_app"
 app = Flask(__name__)
 
 # route ti index.html
@@ -17,20 +17,13 @@ def home():
 app.route("/scrape")
 def scrape():
 
-
-
-
-
-
-
-
-
-
-
-
-
+    mars_dict = mongodb.mars_dict
+    mars_app = scrape_mars.scrape()
+    mars_dict.update({}, mars_app, upsert = True)
+    return redirect("/", code=302)
 
 
 #end instance of Flask
-if __name__ == "__main__":
-    app.run(debug=True)
+# 
+    if __name__ == "__main__":
+        app.run(debug=True)
