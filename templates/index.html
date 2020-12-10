@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,28 +15,56 @@
 
 <body>
   <div class="container">
-
+  <!-- header tag for Mission to Mars and scrape button -->
     <div class="jumbotron text-center border-bottom">
       <h1 class="font-weight-bold">Mission to Mars</h1>
       <p><a class="btn btn-primary btn-lg" href="../scrape" role="button">Scrape New Data</a></p>
     </div>
 
-    </div>
+
+<!-- latest mars news tag -->
     <div class="row">
       <div class="col-md-12">
         <h2><u>Latest Mars News</u></h2>
       </div>
     </div>
   </br>
+
+
     <div class="row">
+<!-- tags for news title and news paragraphhh -->
       <div class="col-md-12">
         <h4>{{mars.latest_news_title}}</h4>
         <p>{{mars.latest_news_paragraph}}</p>
       </div>
     </div>
-
   <hr>
 
+
+    <div class="row">
+<!-- Display featured image from Mars -->
+      <div class="col-md-8 border">
+        <h2 class=""><u>Featured Mars Image</u></h2>
+        </br>
+        <img src="{{mars.featured_image_url}}" alt="Featured Mars Image">
+      </div>
+
+<!-- Display Mars Facts -->
+      <div class="col-md-4">
+        <div class="border">
+        <div class="border">
+          <h5>Mars Facts</h5>
+            {{ mars.fact_table | safe }}
+        </div>
+      </div>
+    </div>
+    </div>
+  <hr>
+
+  <!-- Display Mars hemispheres  -->
+
+
+</div>
 </body>
 
 </html>
