@@ -6,7 +6,7 @@ import pymongo
 
 def init_browser():
     # path to chromedriver
-    executable_path = {'executable_path': ChromeDriverManager().install()}
+    executable_path = {"executable_path": "chromedriver"}
     browser = Browser('chrome', **executable_path, headless=False)
 
 def scrape():
